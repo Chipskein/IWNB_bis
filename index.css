@@ -1,0 +1,590 @@
+@font-face {
+    font-family: cmd;
+    src: url("font/cmd.ttf");
+}
+
+@font-face {
+    font-family: pixelmania;
+    src: url("font/Pixelmania.ttf");
+}
+
+body {
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-family: cmd;
+    /*background-image: url("https://media.giphy.com/media/rWY9ySfjytitq/giphy.gif");*/
+    background-image: url("https://media.giphy.com/media/12LcyVMj7knWrC/giphy.gif");
+    background-repeat: no-repeat;
+}
+
+body.menu {
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-family: cmd;
+    background-image: url("https://media.giphy.com/media/rWY9ySfjytitq/giphy.gif");
+    /*background-image: url("https://media.giphy.com/media/5ba7Il0evF1LO/giphy.gif");
+    */
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+body.ingame {
+    background-image: url("https://media.giphy.com/media/3oKIP6QMnHwRnnaGZi/giphy.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+body.dif {
+    background-color: black;
+    color: white;
+    text-align: center;
+    font-family: cmd;
+    background-image: url("https://media.giphy.com/media/5ba7Il0evF1LO/giphy.gif");
+
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+header>h1 {
+    font-size: 32px;
+
+    color: aqua;
+
+    position: absolute;
+
+    top: 25%;
+
+    left: 34%;
+
+    border: 1px solid;
+
+    transform: rotate(10deg);
+}
+
+h1 {
+    display: block;
+    font-size: 30px;
+    cursor: default;
+}
+
+article>h1:nth-of-type(1) {
+    position: absolute;
+    font-size: 120px;
+    left: 74%;
+    top: 3%;
+    cursor: url("cursor/cursor_tutorialyt.cur"), auto;
+}
+
+article>h1:nth-of-type(2) {
+    position: absolute;
+    font-size: 120px;
+    left: 70%;
+    top: 29%;
+    background-color: transparent;
+    cursor: url("cursor/cursor_tutorialyt.cur"), auto;
+}
+
+h2 {
+    position: absolute;
+    top: 52%;
+    left: 31%;
+    transform: rotate(5deg);
+    color: aqua;
+    cursor: default;
+}
+
+div.interface {
+    position: fixed;
+    bottom: 0;
+    background-color: black;
+    width: 100%;
+    height: 20%;
+    border-top: 40px solid gainsboro;
+
+}
+
+input.user {
+    position: absolute;
+    top: 38%;
+    left: 20%;
+    width: 100%;
+    height: 50px;
+    background-color: transparent;
+    border: none;
+    color: yellow;
+    font-size: 30px;
+    font-family: cmd;
+}
+
+input.certo {
+    position: absolute;
+    top: 11%;
+    left: 14%;
+    height: 100px;
+    width: 100px;
+    background-color: transparent;
+    border: 5px solid green;
+    font-size: 35px;
+    color: greenyellow;
+    text-align: center;
+    font-family: cmd;
+}
+
+input.errado {
+    position: absolute;
+    top: 11%;
+    left: 25%;
+    height: 100px;
+    width: 100px;
+    background-color: transparent;
+    border: 5px solid green;
+    font-size: 35px;
+    color: red;
+    text-align: center;
+    font-family: cmd;
+}
+
+img.mathman {
+    border: solid 5px red;
+    position: absolute;
+    top: 2%;
+    width: 600px;
+    height: 720px;
+    left: 55%;
+    cursor: url("cursor/cursor_tutorialyt.cur"),
+        auto;
+}
+
+img.programmer {
+    position: absolute;
+
+    top: 2%;
+    cursor: url("cursor/cursor_tutorialyt.cur"),
+        auto;
+    left: 2%;
+    width: 600px;
+    height: 720px;
+    border: 5px solid green;
+}
+
+article>h1.select {
+    color: yellow
+}
+
+input.programmer {
+    position: absolute;
+    left: 15%;
+    top: 90%;
+    width: 20%;
+    background-color: transparent;
+    border: none;
+    color: yellow;
+    font-size: 30px;
+    font-family: cmd;
+}
+
+input.mathman {
+    position: absolute;
+    left: 73%;
+    top: 90%;
+    width: 20%;
+    background-color: transparent;
+    border: none;
+    color: yellow;
+    font-size: 30px;
+    font-family: cmd;
+}
+
+img.cmd {
+    position: absolute;
+    top: 75%;
+    width: 3%;
+    left: 1%;
+}
+
+h2.cmd {
+    position: absolute;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    transform: revert;
+    top: 73%;
+    left: 5%;
+}
+
+.exit {
+    position: absolute;
+    top: 76%;
+    left: 96%;
+}
+
+.exit:hover {
+    background-color: gray;
+}
+
+p {
+    font-size: 20px;
+    color: yellow;
+}
+
+p:nth-of-type(1) {
+    position: absolute;
+    top: 78%
+}
+
+p:nth-of-type(2) {
+    position: absolute;
+    top: 80%
+}
+
+p:nth-of-type(3) {
+    position: absolute;
+    top: 85%;
+    font-size: 30px;
+}
+
+p:nth-of-type(4) {
+    position: absolute;
+    top: 10%;
+    left: 45%;
+    font-size: 200px;
+    color: aqua;
+}
+
+p:nth-of-type(5) {
+    position: absolute;
+    top: 10%;
+    left: 45%;
+    font-size: 20px;
+    color: black;
+}
+
+body.almost_on {
+    background-image: url("https://media.giphy.com/media/BUY7MtOFcLir6/giphy.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+input.game {
+    color: aqua;
+    background-color: transparent;
+    position: absolute;
+    left: 0%;
+    border: none;
+    font-size: 31px;
+    font-family: cmd;
+}
+
+input.al_critic {
+    color: orange;
+}
+
+input.critical {
+    color: red;
+}
+
+input#r2 {
+    top: 10%;
+}
+
+input#r3 {
+    top: 15%;
+}
+
+input#r4 {
+    top: 20%;
+}
+
+input#r5 {
+    top: 25%;
+}
+
+input#r6 {
+    top: 35%;
+}
+
+input#r7 {
+    top: 40%;
+}
+
+input#r8 {
+    top: 45%;
+}
+
+input#r9 {
+    top: 50%;
+}
+
+input#r10 {
+    top: 55%;
+}
+
+input#r11 {
+    top: 60%;
+}
+
+input#r12 {
+    top: 65%;
+}
+
+section>div#scorestreak {
+    background-image: url("https://media.giphy.com/media/5T0kxKdNjAktanvPqB/giphy.gif");
+    position: absolute;
+    border: 2px solid gainsboro;
+    width: 20%;
+    height: 68%;
+    background-position: center;
+    left: 79%;
+    top: 2%;
+    border-top: 26px solid gainsboro;
+}
+
+div#scorestreak>p:nth-of-type(1) {
+    position: absolute;
+    top: -8%;
+    left: 12%;
+    color: black;
+}
+
+div#scorestreak>img {
+    width: 8%;
+    position: absolute;
+    top: -4%;
+    left: 1%;
+}
+
+div#scorestreak>p:nth-of-type(2) {
+    top: 1%;
+    color: red;
+}
+
+div#scorestreak>p:nth-of-type(3) {
+    top: 10%;
+    font-size: 20px;
+    color: red;
+}
+
+div#scorestreak>p:nth-of-type(4) {
+    color: red;
+    top: 20%;
+    left: 0%;
+    font-size: 20px;
+}
+div#scorestreak>p:nth-of-type(5) {
+    color: red;
+    top: 30%;
+    left: 0%;
+    font-size: 20px;
+}
+
+div#scorestreak>p:nth-of-type(6) {
+    color: aqua;
+    position: absolute;
+    top: 80%;
+    left: 0%;
+    font-size: 52px;
+}
+
+/*RICHTOFEN:true*/
+body.richtofen {
+    background-image: url("img/richtofen.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+
+section>div#scorestreak.richtofen {
+    background-image: url("img/935.png");
+    border: 2px solid red;
+    border-top: 26px solid red;
+    background-repeat: no-repeat;
+    background-color: black;
+}
+
+div.interface.richtofen {
+    border-top-color: red;
+    background-color: rgba(0, 0, 0, .6);
+}
+
+p.richtofen {
+    color: red
+}
+
+/*Hackerman:true*/
+body.hackerman {
+    background-image: url("https://media.giphy.com/media/aQCCNezRpb9Hq/giphy.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+body.ls{
+    background-image: url("https://media.giphy.com/media/Ln2LfLZADNRNC/giphy.gif");
+}
+section>div#scorestreak.hackerman {
+    background-image: url("https://media.giphy.com/media/UF4MOaCPnGVoc/giphy.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 2px solid blue;
+    border-top: 26px solid blue;
+}
+section>div#scorestreak.ls {
+    background-image: url("img/leo_otako.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 2px solid green;
+    border-top: 26px solid green;
+}
+section>div#scorestreak.spaceman {
+    background-image: url("https://media.giphy.com/media/FFjhwKduhObZe/giphy.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    border: 2px solid rebeccapurple;
+    border-top: 26px solid rebeccapurple;
+}
+p.ls {
+    color: cyan;
+}
+body.spaceman{
+    background-image: url("https://media.giphy.com/media/RUAMYH27wUhqg/giphy.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+div.interface.hackerman {
+    border-top-color: white;
+    background-color: blue;
+}
+div.interface.ls {
+    background-color: green;
+    opacity: 0.7;
+}
+div.interface.spaceman {
+    background-color: transparent;
+    border-top-color: rebeccapurple;
+}
+
+p.hackerman {
+    color: white
+}
+p.ls{
+    color: greenyellow;
+}
+input.hackerman {
+    color: white;
+}
+p.spaceman{
+    color: greenyellow
+}
+p.pause {
+    font-family: Pixelmania;
+    font-size: 77px;
+    position: absolute;
+    top: 22%;
+    left: 18%;
+}
+
+p.pause.richtofen {
+    color: white;
+}
+
+input.richtofen {
+    color: red;
+}
+
+p#score.richtofen {
+    color: white;
+}
+
+section>div#scorestreak>p.disponivel {
+    color: greenyellow;
+}
+
+#testando {
+    background-color: red;
+    opacity: 0.2;
+    border: none;
+    height: 757px;
+    visibility: visible;
+    display: block;
+}
+
+video {
+    width: 100%;
+}
+
+
+
+div#test.end {
+    border: 2px solid rebeccapurple;
+    border-top-color: rebeccapurple;
+    border-top-style: solid;
+    border-top-width: 2px;
+    border-top: 34px rebeccapurple solid;
+    background-image: url("https://media.giphy.com/media/l1Lc1Kn9hImgpx5Re/giphy.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: fixed;
+    top: 11%;
+    min-height: 70%;
+    min-width: 70%;
+    right: 16%;
+}
+
+div#test.end>input {
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    font-family: Impact,
+        Haettenschweiler,
+        'Arial Narrow Bold',
+        sans-serif;
+    font-size: 50px;
+    color: greenyellow;
+    top: 85%;
+    left: 33%;
+}
+div#test.end>button{
+    width: 5%;
+
+    height: 6%;
+
+    position: absolute;
+
+    top: -6%;
+
+    left: 94%;
+    font-size: 30px;
+    border: none;
+    color: greenyellow;
+    background-color: transparent;
+}
+div#test.end>button:hover{
+    background-color: greenyellow;
+    color: rebeccapurple;
+}
+div#test.end>p{
+    color: greenyellow;
+
+    position: absolute;
+
+    top: -9%;
+
+    left: 5%;
+}
+div#test.end>img {
+    width: 3%;
+
+    position: absolute;
+
+    left: 1%;
+
+    top: -6%;
+}
+body.end{
+    background-image: url("https://media.giphy.com/media/bsOt2FWfbLx0A/giphy.gif");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+body.nuke{
+    background-image: none;
+    background-color: black;
+}
