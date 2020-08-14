@@ -13,9 +13,13 @@ body {
     color: white;
     text-align: center;
     font-family: cmd;
-    /*background-image: url("https://media.giphy.com/media/rWY9ySfjytitq/giphy.gif");*/
-    background-image: url("https://media.giphy.com/media/12LcyVMj7knWrC/giphy.gif");
+    background-image: url("emil.png");
     background-repeat: no-repeat;
+    background-size: 36%;
+    background-position: center;
+    background-position-y: -55%;
+    /*background-image: url("https://media.giphy.com/media/rWY9ySfjytitq/giphy.gif");*/
+    /*background-image: url("https://media.giphy.com/media/12LcyVMj7knWrC/giphy.gif");*/
 }
 
 body.menu {
@@ -28,6 +32,7 @@ body.menu {
     */
     background-repeat: no-repeat;
     background-size: cover;
+    background-position-y: top;
 }
 
 body.ingame {
@@ -42,25 +47,17 @@ body.dif {
     text-align: center;
     font-family: cmd;
     background-image: url("https://media.giphy.com/media/5ba7Il0evF1LO/giphy.gif");
-
     background-repeat: no-repeat;
     background-size: cover;
 }
 
 header>h1 {
-    font-size: 32px;
-
-    color: aqua;
-
+    font-size: 100px;
+    color: yellow;
     position: absolute;
-
-    top: 25%;
-
-    left: 34%;
-
-    border: 1px solid;
-
-    transform: rotate(10deg);
+    top: -1%;
+    left: 30%;
+    border-bottom: 5px solid;
 }
 
 h1 {
@@ -71,27 +68,17 @@ h1 {
 
 article>h1:nth-of-type(1) {
     position: absolute;
-    font-size: 120px;
-    left: 74%;
-    top: 3%;
-    cursor: url("cursor/cursor_tutorialyt.cur"), auto;
-}
-
-article>h1:nth-of-type(2) {
-    position: absolute;
-    font-size: 120px;
-    left: 70%;
-    top: 29%;
-    background-color: transparent;
+    font-size: 90px;
+    left: 45%;
+    top: 65%;
     cursor: url("cursor/cursor_tutorialyt.cur"), auto;
 }
 
 h2 {
     position: absolute;
-    top: 52%;
-    left: 31%;
-    transform: rotate(5deg);
-    color: aqua;
+    top: 90%;
+    left: 48%;
+    color: yellow;
     cursor: default;
 }
 
@@ -146,7 +133,7 @@ input.errado {
     font-family: cmd;
 }
 
-img.mathman {
+/*img.mathman {
     border: solid 5px red;
     position: absolute;
     top: 2%;
@@ -155,7 +142,7 @@ img.mathman {
     left: 55%;
     cursor: url("cursor/cursor_tutorialyt.cur"),
         auto;
-}
+}*/
 
 img.programmer {
     position: absolute;
@@ -163,7 +150,7 @@ img.programmer {
     top: 2%;
     cursor: url("cursor/cursor_tutorialyt.cur"),
         auto;
-    left: 2%;
+    left: 28%;
     width: 600px;
     height: 720px;
     border: 5px solid green;
@@ -175,7 +162,7 @@ article>h1.select {
 
 input.programmer {
     position: absolute;
-    left: 15%;
+    left: 44%;
     top: 90%;
     width: 20%;
     background-color: transparent;
@@ -184,7 +171,7 @@ input.programmer {
     font-size: 30px;
     font-family: cmd;
 }
-
+/*
 input.mathman {
     position: absolute;
     left: 73%;
@@ -195,12 +182,12 @@ input.mathman {
     color: yellow;
     font-size: 30px;
     font-family: cmd;
-}
+}*/
 
 img.cmd {
     position: absolute;
     top: 75%;
-    width: 3%;
+    width: 2%;
     left: 1%;
 }
 
@@ -249,7 +236,7 @@ p:nth-of-type(4) {
     top: 10%;
     left: 45%;
     font-size: 200px;
-    color: aqua;
+    color: yellow;
 }
 
 p:nth-of-type(5) {
@@ -267,7 +254,7 @@ body.almost_on {
 }
 
 input.game {
-    color: aqua;
+    color: greenyellow;
     background-color: transparent;
     position: absolute;
     left: 0%;
@@ -379,7 +366,7 @@ div#scorestreak>p:nth-of-type(5) {
 }
 
 div#scorestreak>p:nth-of-type(6) {
-    color: aqua;
+    color: yellow;
     position: absolute;
     top: 80%;
     left: 0%;

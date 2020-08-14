@@ -185,10 +185,6 @@ let system = {
         body.classList.add("menu")
         let section = document.createElement("section");
         body.appendChild(section);
-        let img_m = document.createElement("img");
-        img_m.classList.add("mathman");
-        img_m.src = "https://media.giphy.com/media/l4Jz19hgVBnCCM8uY/giphy.gif";
-        section.appendChild(img_m);
         let img_p = document.createElement("img");
         img_p.classList.add("programmer");
         img_p.src = "https://media.giphy.com/media/3oEjHWbXcpeKhTktXi/giphy.gif";
@@ -208,23 +204,6 @@ let system = {
                 input_p.value = '';
             }
         }, 50)
-        let input_m = document.createElement("input");
-        section.appendChild(input_m);
-        input_m.setAttribute("disabled", "disabled");
-        input_m.classList.add("mathman");
-        let c1 = 0;
-        setInterval(function () {
-            input_m.value += "MATHMAN  "[c1];
-            c1++
-            if (c1 == 8) {
-                c1 = 0
-                input_m.value = '';
-            }
-        }, 50)
-        img_m.addEventListener("click", function () {
-            system.Mathman = true;
-            system.game.r_interf()
-        });
         img_p.addEventListener("click", function () {
             system.programmer = true;
             system.game.r_interf()
@@ -271,13 +250,13 @@ let system = {
                     div.classList.add("interface");
                     section.appendChild(div);
                 let p = document.createElement("p");
-                    p.innerText = "Microsft Windows[Error_Version.1241024]"
+                    p.innerText = "Welcome Guest"
                     section.appendChild(p);
                 let p1 = document.createElement("p");
-                    p1.innerText = "(c) 19xx Microsoft Corporation. All rights reserved."
+                    p1.innerText = ""
                     section.appendChild(p1);
                 let p2 = document.createElement("p");
-                    p2.innerText = "C:\\Users\\Chipskein\\game>"
+                    p2.innerText = "root@chipskein_guest$>"
                     section.appendChild(p2);
                 let input_u = document.createElement("input");
                     input_u.classList.add("user");
@@ -294,7 +273,7 @@ let system = {
                     section.appendChild(img_cmd);
                 let cmd_txt = document.createElement("h2");
                     cmd_txt.classList.add("cmd");
-                    cmd_txt.innerText = "Command Prompt"
+                    cmd_txt.innerText = "bash/bin/guest"
                     section.appendChild(cmd_txt);
                 let p3 = document.createElement("p");
                     section.appendChild(p3);
@@ -355,6 +334,7 @@ let system = {
                 }, 5000);
 
             }
+            
         },
         //spawn
         spawn_hackerman: function () {
