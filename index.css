@@ -39,7 +39,7 @@ body.ingame {
     background-image: url("https://media.giphy.com/media/3oKIP6QMnHwRnnaGZi/giphy.gif");
     background-repeat: no-repeat;
     background-size: cover;
-    background-origin:center;
+    background-position:center;
 }
 
 body.dif {
