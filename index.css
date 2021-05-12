@@ -252,6 +252,7 @@ body.almost_on {
     background-image: url("https://media.giphy.com/media/BUY7MtOFcLir6/giphy.gif");
     background-repeat: no-repeat;
     background-size: cover;
+    background-position:center;
 }
 
 input.game {
@@ -379,6 +380,7 @@ body.richtofen {
     background-image: url("img/richtofen.jpg");
     background-size: cover;
     background-repeat: no-repeat;
+    background-position:center;
 
 }
 
@@ -404,9 +406,11 @@ body.hackerman {
     background-image: url("https://media.giphy.com/media/aQCCNezRpb9Hq/giphy.gif");
     background-size: cover;
     background-repeat: no-repeat;
+    background-position:center;
 }
 body.ls{
     background-image: url("https://media.giphy.com/media/Ln2LfLZADNRNC/giphy.gif");
+    background-position:center;
 }
 section>div#scorestreak.hackerman {
     background-image: url("https://media.giphy.com/media/UF4MOaCPnGVoc/giphy.gif");
@@ -436,6 +440,7 @@ body.spaceman{
     background-image: url("https://media.giphy.com/media/RUAMYH27wUhqg/giphy.gif");
     background-repeat: no-repeat;
     background-size: cover;
+    background-position:center;
 }
 div.interface.hackerman {
     border-top-color: white;
@@ -571,8 +576,10 @@ body.end{
     background-image: url("https://media.giphy.com/media/bsOt2FWfbLx0A/giphy.gif");
     background-size: cover;
     background-repeat: no-repeat;
+    background-position:center;
 }
 body.nuke{
     background-image: none;
     background-color: black;
+    background-position:center;
 }
