@@ -10,9 +10,13 @@
   <li>button.exit need refresh the page</li>
  </ul>
  <h2>More screenshots</h2>
+ <h4>pause=ON<h4>
  <img src="https://github.com/Chipskein/IWNB_bis/blob/master/screenshot2.png"></img>
+ <h4>stronda_kawai.exe<h4>
  <img src="https://github.com/Chipskein/IWNB_bis/blob/master/screenshot3.png"></img>
+ <h4>hackerman.exe<h4>
  <img src="https://github.com/Chipskein/IWNB_bis/blob/master/screenshot4.png"></img>
+ <h4>richtofen.exe<h4>
  <img src="https://github.com/Chipskein/IWNB_bis/blob/master/screenshot5.png"></img>
 </body>
 </html>
