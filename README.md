@@ -23,6 +23,6 @@
  <h4>richtofen.exe<h4>
   <p>Ability:automatic hits during a short time period</p>
  <img src="https://github.com/Chipskein/IWNB_bis/blob/master/screenshot5.png"></img>
-  <h4>Nuke is a endgame</h4>
+  <h4>Nuke is an endgame</h4>
 </body>
 </html>
