@@ -8,6 +8,8 @@
  <ul>
   <li>background positon bug when calling the streaks:stronda_kawai.exe,hackerman.exe</li>
   <li>button.exit need refresh the page</li>
+  <li>words need be simplifly</li>
+  <li>time need be optimized</li>
  </ul>
  <h2>More screenshots</h2>
  <h4>pause=ON<h4>
