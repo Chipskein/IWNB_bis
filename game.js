@@ -104,7 +104,7 @@ class row {
             "game",
             "index",
             "vapor",
-            "kkk
+            "kkk"
         ]
 
             ;
