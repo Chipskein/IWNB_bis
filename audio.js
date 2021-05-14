@@ -20,7 +20,7 @@ function pause_(){
     }
 }
 let bgm={
-    c:1,
+    c:3,
     currentt:null,
     bgm:[   null,
             "bgm/bgm0.mp3",
