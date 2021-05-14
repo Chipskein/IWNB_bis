@@ -108,7 +108,7 @@ class row {
         ]
 
             ;
-        this.palavra = this.palavras[Math.ceil(Math.random() * 100)];
+        this.palavra = this.palavras[Math.ceil(Math.random() * 105)];
     }
     create_inp() {
         let section = document.getElementsByTagName("section")[0];
@@ -172,7 +172,6 @@ class row {
 let system = {
     //MENU
     programmer: false,
-    Mathman: false,
     limpar: function () {
         let section = document.getElementsByTagName("section")[0];
         section.remove();
@@ -223,18 +222,18 @@ let system = {
         pause: false,
         score: 0,
         spc: 1,
-        rows: [new row(100, "r1"),
-        new row(120, "r2"),
-        new row(140, "r3"),
-        new row(160, "r4"),
-        new row(180, "r5"),
-        new row(200, "r6"),
-        new row(100, "r7"),
-        new row(120, "r8"),
-        new row(140, "r9"),
-        new row(160, "r10"),
-        new row(180, "r11"),
-        new row(200, "r12"),
+        rows: [new row(300, "r1"),
+        new row(320, "r2"),
+        new row(340, "r3"),
+        new row(360, "r4"),
+        new row(380, "r5"),
+        new row(300, "r6"),
+        new row(300, "r7"),
+        new row(320, "r8"),
+        new row(340, "r9"),
+        new row(360, "r10"),
+        new row(380, "r11"),
+        new row(300, "r12"),
         ],
         user_txt: undefined,
         r_interf: function () {
