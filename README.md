@@ -6,7 +6,6 @@
  
  <h2>Bugs to fix</h2>
  <ul>
-  <li>button.exit need refresh the page</li>
   <li>words need be simplifly</li>
   <li>time need be optimized</li>
  </ul>
