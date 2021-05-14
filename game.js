@@ -108,7 +108,7 @@ class row {
         ]
 
             ;
-        this.palavra = this.palavras[Math.ceil(Math.random() * 105)];
+        this.palavra = this.palavras[Math.ceil(Math.random() * 99)];
     }
     create_inp() {
         let section = document.getElementsByTagName("section")[0];
