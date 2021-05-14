@@ -252,7 +252,7 @@ body.almost_on {
     background-image: url("https://media.giphy.com/media/BUY7MtOFcLir6/giphy.gif");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position:center;
+    background-position:top;
 }
 
 input.game {
