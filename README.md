@@ -6,7 +6,6 @@
  
  <h2>Bugs to fix</h2>
  <ul>
-  <li>words need be simplifly</li>
   <li>time need be optimized</li>
  </ul>
  <h2>More screenshots</h2>
