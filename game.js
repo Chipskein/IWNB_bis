@@ -265,7 +265,7 @@ let system = {
                 let exit_b = document.createElement("button");
                 exit_b.innerText = "X";
                 exit_b.classList.add("exit");
-                exit_b.addEventListener("click",window.location.reload())
+                exit_b.addEventListener("click",function (){ window.location.reload()})
                 section.appendChild(exit_b);
                 let img_cmd = document.createElement("img");
                     img_cmd.classList.add("cmd");
