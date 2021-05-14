@@ -39,7 +39,7 @@ body.ingame {
     background-image: url("https://media.giphy.com/media/3oKIP6QMnHwRnnaGZi/giphy.gif");
     background-repeat: no-repeat;
     background-size: cover;
-    background-position:center;
+    background-position:top;
 }
 
 body.dif {
@@ -406,11 +406,11 @@ body.hackerman {
     background-image: url("https://media.giphy.com/media/aQCCNezRpb9Hq/giphy.gif");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position:center;
+    background-position:top;
 }
 body.ls{
     background-image: url("https://media.giphy.com/media/Ln2LfLZADNRNC/giphy.gif");
-    background-position:center;
+    background-position:top;
 }
 section>div#scorestreak.hackerman {
     background-image: url("https://media.giphy.com/media/UF4MOaCPnGVoc/giphy.gif");
