@@ -576,7 +576,7 @@ body.end{
     background-image: url("https://media.giphy.com/media/bsOt2FWfbLx0A/giphy.gif");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position:center;
+    background-position:top;
 }
 body.nuke{
     background-image: none;
