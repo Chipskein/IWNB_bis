@@ -6,7 +6,6 @@
  
  <h2>Bugs to fix</h2>
  <ul>
-  <li>background positon bug when calling the streaks:stronda_kawai.exe,hackerman.exe</li>
   <li>button.exit need refresh the page</li>
   <li>words need be simplifly</li>
   <li>time need be optimized</li>
