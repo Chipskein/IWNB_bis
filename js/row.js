@@ -44,7 +44,7 @@ export class row
                     teste = teste.slice(0, teste.length - 1);
                     teste = parseInt(teste);
 
-                    sum=system.getScore()+teste;
+                    let sum=system.getScore()+teste;
                     system.setScore(sum);
 
                     score.innerText = `SCORE:${system.getScore()}`;
@@ -86,6 +86,10 @@ export class row
     }
     start(){
         this.create_inp();
+        this.animation();
+    }
+    restart(){
+        this.stop_anm();
         this.animation();
     }
 }

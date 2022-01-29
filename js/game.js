@@ -2,18 +2,20 @@ import { row } from './row.js';
 
 const game={
     //streaks controller
+    //this switcher aren't in streak object because i need to use them in row class and can acess them with system.getGameSwitchers
     richtofen: false,
     hackerman: false,
     nuke: false,
     ls: false,
     
-    c: 0,
-    c1: 0,
-    c2: 0,
+    c: 0,//I don't rebember WTF is this LOL
+    c1: 0,//this either
+    c2: 0,//this either
 
     pause: false,
     score: 5000,
-    spc: 1,
+    spc: 1,//this is a streak call counter
+
     //rows interface (time,inputid)
     rows:
         [
@@ -36,7 +38,6 @@ const game={
         //clean() what already exists
         system.limpar();
         let body = document.getElementById("body");
-            //body.classList.remove("menu")
             body.classList.add("almost_on")
         ;
         let section = document.createElement("section");
@@ -134,37 +135,27 @@ const game={
         spawners:{
             spawn_hackerman: function () {
                 if (game.spc <= 4) {
+                    //play hackerman audio
                     game.hackerman = true;
                     let audio = document.createElement("audio");
-                    audio.src = 'sound/hackerman.mp3'
-                    audio.autoplay = true;
-                    audio.volume = 0.5;
-                    document.getElementsByTagName("body")[0].classList.add("hackerman");
+                        audio.src = 'sound/hackerman.mp3'
+                        audio.autoplay = true;
+                        audio.volume = 0.5;
+
+                    //Change CSS
+                    document.getElementById("body").classList.add("hackerman");
                     document.getElementById("scorestreak").classList.add("hackerman");
-
-                    document.getElementById("scorestreak").children[0].innerHTML = "hackerman.exe"
-                    document.getElementById("scorestreak").children[0].classList.add("hackerman");
-                    document.getElementById("scorestreak").children[1].src = 'icons/hackerman.png';
-                    document.getElementById("scorestreak").children[1].classList.add("hackerman");
-
-                    document.getElementById("score").style.color = "blue";
-                    document.getElementById("user").style.color = "white";
                     document.getElementById("user").value = "";
-                    document.getElementsByClassName("interface")[0].classList.add("hackerman");
-                    for (let i = 0; i <= 2; i++) {
-                        document.querySelectorAll("p")[i].classList.add("hackerman");
-                    }
-                    document.querySelectorAll("p")[document.querySelectorAll("p").length - 1].classList.add("hackerman");
-                    for (let i = 0; i <= document.querySelectorAll("input").length - 1; i++) {
-                        document.querySelectorAll("input")[i].classList.add("hackerman");
-                    }
-                    //re anima com outro tempo
-                    for (let i of game.rows) {
-                        i.stop_anm();
-                    }
-                    for (let i of game.rows) {
-                        i.animation();
-                    }
+                    document.getElementById("interface").classList.add("hackerman");
+                    document.getElementById("div-rows").classList.add("hackerman");
+                    //Change interface>P classlist 
+                    let ps=document.querySelectorAll("p");
+                    let inputs=document.querySelectorAll("input");
+                    ps.forEach(p=>p.classList.add("hackerman"));                    
+                    //Change all rows classlist
+                    inputs.forEach(input => input.classList.add("hackerman"));
+                    //reanimete
+                    game.rows.forEach(row => row.restart());
                     game.spc++;
                 }
             },
@@ -178,22 +169,15 @@ const game={
                 document.getElementById("body").classList.add("ls");
                 document.getElementById("scorestreak").classList.add("ls");
 
-                //document.getElementById("scorestreak").children[0].innerHTML = "Leo Stronda.exe"
-                //document.getElementById("scorestreak").children[0].classList.add("ls");
-                //document.getElementById("scorestreak").children[1].src = 'icons/whey-protein-8-806157.png';
-                //document.getElementById("scorestreak").children[1].classList.add("ls");
-
                 document.getElementById("user").value = "";
                 document.getElementById("div-rows").classList.add("ls");
                 document.getElementById("interface").classList.add("ls");
-                for (let i = 0; i <= 2; i++) {
-                    document.querySelectorAll("p")[i].classList.add("ls");
-                }
-
-                document.querySelectorAll("p")[document.querySelectorAll("p").length - 1].classList.add("ls");
-                for (let i = 0; i <= document.querySelectorAll("input").length - 1; i++) {
-                    document.querySelectorAll("input")[i].classList.add("ls");
-                }
+                let ps=document.querySelectorAll("p");
+                let inputs=document.querySelectorAll("input");
+                //Change interface>P classlist 
+                ps.forEach(p=>p.classList.add("ls"));                    
+                //Change all rows classlist
+                inputs.forEach(input => input.classList.add("ls"));
 
             },
             spawn_nuke: function () {
@@ -238,37 +222,34 @@ const game={
                 if (game.spc <= 4) {
 
                     let audio = document.createElement("audio");
-                    audio.src = 'sound/richtofen_laugth.mp3'
-                    audio.autoplay = true;
-                    audio.volume = 0.5;
-                    let c = 0;
-                    audio.onended = function () { if (c == 0) { audio.src = 'bye_richtofen.mp3'; audio.autoplay = true; audio.volume = 0.5; c = 1 } }
-                    document.getElementsByTagName("body")[0].appendChild(audio);
+                        audio.src = 'sound/richtofen_laugth.mp3'
+                        audio.autoplay = true;
+                        audio.volume = 0.5;
+                    //don't know
+                    //let c = 0;
+                    //audio.onended = function () { if (c == 0) { audio.src = 'sound/bye_richtofen.mp3'; audio.autoplay = true; audio.volume = 0.5; c = 1 } }
+                    
+                    
+                    document.getElementById("body").appendChild(audio);
 
-                    document.getElementsByTagName("body")[0].classList.add("richtofen");
+                    document.getElementById("body").classList.add("richtofen");
                     document.getElementById("scorestreak").classList.add("richtofen");
-
-                    document.getElementById("scorestreak").children[0].innerHTML = "richtofen.exe"
-                    document.getElementById("scorestreak").children[0].classList.add("richtofen");
-                    document.getElementById("scorestreak").children[1].src = 'icons/american.png';
-                    document.getElementById("scorestreak").children[1].classList.add("richtofen");
-
-                    document.getElementById("score").style.color = "white";
-                    document.getElementById("user").style.color = "white";
+                    document.getElementById("div-rows").classList.add("richtofen")
                     document.getElementById("user").value = "";
-
                     let fi = document.createElement("fieldset");
-                    fi.id = "testando";
+                    fi.id = "richtofen-overlay";
                     fi.setAttribute("disabled", "disabled")
-                    document.getElementsByTagName("body")[0].appendChild(fi);
-                    document.getElementsByClassName("interface")[0].classList.add("richtofen");
-                    for (let i = 0; i <= 2; i++) {
-                        document.querySelectorAll("p")[i].classList.add("richtofen");
-                    }
-                    document.querySelectorAll("p")[document.querySelectorAll("p").length - 1].classList.add("richtofen");
-                    for (let i = 0; i <= document.querySelectorAll("input").length - 1; i++) {
-                        document.querySelectorAll("input")[i].classList.add("richtofen");
-                    }
+                    document.getElementById("body").appendChild(fi);
+                    document.getElementById("interface").classList.add("richtofen");
+
+
+                    let ps=document.querySelectorAll("p");
+                    let inputs=document.querySelectorAll("input");
+                    //Change interface>P classlist 
+                    ps.forEach(p=>p.classList.add("richtofen"));                    
+                    //Change all rows classlist
+                    inputs.forEach(input => input.classList.add("richtofen"));
+
                     game.spc++;
                 }
             },
@@ -276,81 +257,54 @@ const game={
         killers:{
             kill_richtofen: function () {
                 game.richtofen = false;    
-                document.getElementsByTagName("body")[0].classList.remove("richtofen");
+                document.getElementById("body").classList.remove("richtofen");
                 document.getElementById("scorestreak").classList.remove("richtofen");
-                document.getElementsByTagName("fieldset")[0].remove();
-                document.getElementById("scorestreak").children[0].innerHTML = "Chipskein.exe"
-                document.getElementById("scorestreak").children[0].classList.remove("richtofen");
-                document.getElementById("scorestreak").children[1].src = 'icons/streakicon.png';
-                document.getElementById("scorestreak").children[1].classList.remove("richtofen");
-
-                document.getElementById("score").style.color = "aqua";
-                document.getElementById("user").style.color = "yellow";
-
-                document.getElementsByClassName("interface")[0].classList.remove("richtofen");
-                for (let i = 0; i <= 2; i++) {
-                    document.querySelectorAll("p")[i].classList.remove("richtofen");
-                }
-                document.querySelectorAll("p")[document.querySelectorAll("p").length - 1].classList.remove("richtofen");
-                for (let i = 0; i <= document.querySelectorAll("input").length - 1; i++) {
-                    document.querySelectorAll("input")[i].classList.remove("richtofen");
-                }
+                document.getElementById("richtofen-overlay").remove();
+                document.getElementById("interface").classList.remove("richtofen");
+                document.getElementById("div-rows").classList.remove("richtofen")
+                let ps=document.querySelectorAll("p");
+                let inputs=document.querySelectorAll("input");
+                //Change interface>P classlist 
+                ps.forEach(p=>p.classList.remove("richtofen"));                    
+                //Change all rows classlist
+                inputs.forEach(input => input.classList.remove("richtofen"));
             },
             kill_hackerman: function () {
                 game.hackerman = false;
 
-                document.getElementsByTagName("body")[0].classList.remove("hackerman");
+                document.getElementById("body").classList.remove("hackerman");
                 document.getElementById("scorestreak").classList.remove("hackerman");
-
-                document.getElementById("scorestreak").children[0].innerHTML = "Chipskein.exe"
-                document.getElementById("scorestreak").children[0].classList.remove("hackerman");
-                document.getElementById("scorestreak").children[1].src = 'icons/streakicon.png';
-                document.getElementById("scorestreak").children[1].classList.remove("hackerman");
-
-                document.getElementById("score").style.color = "aqua";
-                document.getElementsByClassName("user")[0].style.color = "yellow";
-
-                document.getElementsByClassName("interface")[0].classList.remove("hackerman");
-                for (let i = 0; i <= 2; i++) {
-                    document.querySelectorAll("p")[i].classList.remove("hackerman");
-                }
-                document.querySelectorAll("p")[document.querySelectorAll("p").length - 1].classList.remove("hackerman");
-                for (let i = 0; i <= document.querySelectorAll("input").length - 1; i++) {
-                    document.querySelectorAll("input")[i].classList.remove("hackerman");
-                }
-                for (let i of game.rows) {
-                    i.stop_anm();
-                }
-                for (let i of game.rows) {
-                    i.animation();
-                }
+                document.getElementById("interface").classList.remove("hackerman");
+                document.getElementById("div-rows").classList.remove("hackerman");
+                let ps=document.querySelectorAll("p");
+                let inputs=document.querySelectorAll("input");
+                //Change interface>P classlist 
+                ps.forEach(p=>p.classList.remove("hackerman"));                    
+                //Change all rows classlist
+                inputs.forEach(input => input.classList.remove("hackerman"));
+                game.rows.forEach(row =>row.restart());
             },
             kill_ls: function () {
 
                 game.ls = false;
-
                 document.getElementById("body").classList.remove("ls");
                 document.getElementById("scorestreak").classList.remove("ls");
                 document.getElementById("user").value = "";
                 document.getElementById("div-rows").classList.remove("ls");
                 document.getElementById("interface").classList.remove("ls");
                 document.getElementById("score").classList.remove("ls");
-                for (let i = 0; i <= 2; i++) {
-                    document.querySelectorAll("p")[i].classList.remove("ls");
-                }
-                document.querySelectorAll("p")[document.querySelectorAll("p").length - 1].classList.remove("ls");
-                for (let i = 0; i <= document.querySelectorAll("input").length - 1; i++) {
-                    document.querySelectorAll("input")[i].classList.remove("ls");
-                }
-
-
-
+                let ps=document.querySelectorAll("p");
+                let inputs=document.querySelectorAll("input");
+                //Change interface>P classlist 
+                ps.forEach(p=>p.classList.remove("ls"));                    
+                //Change all rows classlist
+                inputs.forEach(input => input.classList.remove("ls"));
 
             },
         }
     },
     spawnController:function(streakname){
-        //uses game insted of this because of setTimeOut
+        //uses game insted of 'this' because of setTimeOut
         switch(streakname){
             case "stronda":
                 //Spawn Stronda Streak 

@@ -423,21 +423,21 @@ div#scorestreak>p:nth-of-type(5) {
 
 /*RICHTOFEN:true*/
 body.richtofen {
-    background-image: url("img/richtofen.jpg");
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position:center;
-
+background-color: black;
 }
 
 section>div#scorestreak.richtofen {
     background-image: url("img/935.png");
     border: 2px solid red;
-    border-top: 26px solid red;
     background-repeat: no-repeat;
     background-color: black;
 }
-
+#div-rows.richtofen{
+    background-image: url("img/richtofen.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position:center;
+}
 div.interface.richtofen {
     border-top-color: red;
     background-color: rgba(0, 0, 0, .6);
@@ -465,13 +465,17 @@ body.ls{
     background-position:top;
     border: 2px solid greenyellow;
 }
+#div-rows.hackerman{
+    background-image: url("img/hackermanback.gif");
+    background-position:top;
+    border: 2px solid blue;
+}
 
 section>div#scorestreak.hackerman {
     background-image: url("img/hackerman.gif");
     background-repeat: no-repeat;
     background-size: cover;
     border: 2px solid blue;
-    border-top: 26px solid blue;
 }
 section>div#scorestreak.ls {
     background-image: url("img/leo_otako.png");
@@ -546,11 +550,11 @@ section>div#scorestreak>p.disponivel {
     color: greenyellow;
 }
 
-#testando {
+#richtofen-overlay {
     background-color: red;
     opacity: 0.2;
     border: none;
-    height: 757px;
+    height: 10000px;
     visibility: visible;
     display: block;
 }
