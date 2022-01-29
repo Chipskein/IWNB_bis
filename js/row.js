@@ -10,7 +10,6 @@ export class row
         this.palavra = this.palavras[Math.round(Math.random() * this.palavras.length-1)];
     }
     create_inp() {
-        let section = document.getElementsByTagName("section")[0];
         let div=document.getElementById("div-rows");
         let input = document.createElement("input");
         input.disabled=true
@@ -28,10 +27,9 @@ export class row
             c = c.slice(0, c.length - 1);
             c = parseInt(c);
         }
-        console.log("WTF is C",c)
         let input = this.input;
         let time = this.time;
-        if (system.game.hackerman) {
+        if (system.getGameSwitchers().hackerman) {
             time = 8000;
         }
         this.intv = setInterval(function () {
@@ -40,15 +38,20 @@ export class row
             if (c >= 50) { input.classList.remove("al_critic"); input.classList.add("critical") }
             c++
             if (c == 70) {
-                if (system.game.richtofen) {
+                if (system.getGameSwitchers().richtofen) {
                     let score = document.getElementById("score");
                     let teste = input.style.left;
                     teste = teste.slice(0, teste.length - 1);
                     teste = parseInt(teste);
-                    system.game.score += teste;
-                    score.innerText = `SCORE:${system.game.score}`;
+
+                    sum=system.getScore()+teste;
+                    system.setScore(sum);
+
+                    score.innerText = `SCORE:${system.getScore()}`;
                 }
-                c = 0; input.classList.remove("al_critic"); input.classList.remove("critical");
+                c = 0;
+                input.classList.remove("al_critic");
+                input.classList.remove("critical");
             }
         }, time)
 
@@ -58,9 +61,11 @@ export class row
         let teste = this.input.style.left;
         teste = teste.slice(0, teste.length - 1);
         teste = parseInt(teste);
-        if (system.game.ls) { teste += 50 }
-        system.game.score += teste;
-        score.innerText = `SCORE:${system.game.score}`;
+        if (system.getGameSwitchers().ls) teste += 50 ;
+
+        let sum=system.getScore()+teste;
+        system.setScore(sum);       
+        score.innerText = `SCORE:${system.getScore()}`;
     }
     new_word() {
         this.palavra = this.palavras[Math.round(Math.random() * this.palavras.length-1)];
@@ -68,14 +73,19 @@ export class row
             this.input.size=this.palavra.length
             this.stop_anm();
             this.animation();
-            document.getElementsByClassName('user')[0].value = '';
+            document.getElementById('user').value = '';
     }
     verificar(user_txt) { 
         if(user_txt == this.palavra) { 
             this.new_word();
-            this.cal_score() }; 
+            this.cal_score(); 
+        }; 
     }
     stop_anm() {
         clearInterval(this.intv);
+    }
+    start(){
+        this.create_inp();
+        this.animation();
     }
 }

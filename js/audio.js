@@ -1,14 +1,12 @@
 //menu-on
 document.getElementsByTagName("audio")[0].volume=0.1;
 function verificar_audio(){
-    if(system.programmer||system.Mathman){
-        document.getElementsByTagName("audio")[0].pause();
-    }
+    document.getElementsByTagName("audio")[0].pause();
 }
 function pause_(){
     let audio=document.getElementsByTagName("audio")[0]
         audio.src="bgm/pause_song.mp3";
-    if(system.game.pause){
+    if(system.getPause()){
         audio.play();
         audio.volume=0.1;
         audio.loop=true;

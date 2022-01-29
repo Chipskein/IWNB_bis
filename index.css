@@ -302,49 +302,51 @@ input.al_critic {
 input.critical {
     color: rgb(204, 28, 28);
 }
-
+input#r1 {
+    margin-top: 5%;
+}
 input#r2 {
-    top: 10%;
+    margin-top: 10%;
 }
 
 input#r3 {
-    top: 15%;
+    margin-top: 15%;
 }
 
 input#r4 {
-    top: 20%;
+    margin-top: 20%;
 }
 
 input#r5 {
-    top: 25%;
+    margin-top: 25%;
 }
 
 input#r6 {
-    top: 35%;
+    margin-top: 30%;
 }
 
 input#r7 {
-    top: 40%;
+    margin-top: 35%;
 }
 
 input#r8 {
-    top: 45%;
+    margin-top: 40%;
 }
 
 input#r9 {
-    top: 50%;
+    margin-top: 45%;
 }
 
 input#r10 {
-    top: 55%;
+    margin-top: 50%;
 }
 
 input#r11 {
-    top: 60%;
+    margin-top: 55%;
 }
 
 input#r12 {
-    top: 65%;
+    margin-top: 60%;
 }
 
 section>div#scorestreak {
@@ -447,17 +449,25 @@ p.richtofen {
 
 /*Hackerman:true*/
 body.hackerman {
-    background-image: url("https://media.giphy.com/media/aQCCNezRpb9Hq/giphy.gif");
+    background-image: url("img/hackermanback.gif");
     background-size: cover;
     background-repeat: no-repeat;
     background-position:top;
 }
+
 body.ls{
-    background-image: url("https://media.giphy.com/media/Ln2LfLZADNRNC/giphy.gif");
-    background-position:top;
+    background-image: none;
+    background-color: black;
 }
+
+#div-rows.ls{
+    background-image: url("img/lsback.gif");
+    background-position:top;
+    border: 2px solid greenyellow;
+}
+
 section>div#scorestreak.hackerman {
-    background-image: url("https://media.giphy.com/media/UF4MOaCPnGVoc/giphy.gif");
+    background-image: url("img/hackerman.gif");
     background-repeat: no-repeat;
     background-size: cover;
     border: 2px solid blue;
@@ -467,8 +477,7 @@ section>div#scorestreak.ls {
     background-image: url("img/leo_otako.png");
     background-repeat: no-repeat;
     background-size: cover;
-    border: 2px solid green;
-    border-top: 26px solid green;
+    border: 2px solid greenyellow;
 }
 section>div#scorestreak.spaceman {
     background-image: url("https://media.giphy.com/media/FFjhwKduhObZe/giphy.gif");
@@ -492,7 +501,8 @@ div.interface.hackerman {
 }
 div.interface.ls {
     background-color: green;
-    opacity: 0.7;
+    opacity: 0.9;
+    border: 2px solid greenyellow;
 }
 div.interface.spaceman {
     background-color: transparent;
