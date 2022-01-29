@@ -2,7 +2,10 @@
     font-family: cmd;
     src: url("font/cmd.ttf");
 }
-
+@font-face {
+    font-family: ubunto;
+    src: url("./font/ubunto.ttf");
+}
 @font-face {
     font-family: pixelmania;
     src: url("font/Pixelmania.ttf");
@@ -21,7 +24,7 @@ body.menu {
     background-color: black;
     color: white;
     font-family: cmd;
-    background-image: url("https://media.giphy.com/media/rWY9ySfjytitq/giphy.gif");
+    background-image: url("./img/matrix.gif");
     /*background-image: url("https://media.giphy.com/media/5ba7Il0evF1LO/giphy.gif");
     */
     background-repeat: no-repeat;
@@ -30,10 +33,12 @@ body.menu {
 }
 
 body.ingame {
-    background-image: url("https://media.giphy.com/media/3oKIP6QMnHwRnnaGZi/giphy.gif");
-    background-repeat: no-repeat;
+    background-color: black;
+    background-image: url("img/glitch.gif");
     background-size: cover;
-    background-position:top;
+    background-repeat: no-repeat;
+    display: block;
+    user-select: none;
 }
 
 body.dif {
@@ -87,26 +92,44 @@ h2 {
 }
 
 div.interface {
+    font-family: ubunto;
     position: fixed;
     bottom: 0;
     background-color: black;
-    width: 100%;
-    height: 20%;
-    border-top: 40px solid gainsboro;
+    width: 98%;
+    height: 25%;
+    border: 1px solid gainsboro;
+    text-align: left;
+}
 
+
+.div-input-line{
+    display: block ruby;
+}
+.p-input-line{
+    font-size: 30px;
 }
 
 input.user {
-    position: absolute;
+    /*position: absolute;
     top: 38%;
     left: 20%;
+    */
     width: 100%;
     height: 50px;
     background-color: transparent;
     border: none;
-    color: yellow;
+    color: rgb(38, 220, 233);
     font-size: 30px;
     font-family: cmd;
+    user-select: none;
+}
+input.user:focus{
+    outline: none;
+}
+
+input.user:hover{
+    cursor: default;
 }
 
 input.certo {
@@ -195,9 +218,9 @@ h2.cmd {
 
 p {
     font-size: 20px;
-    color: yellow;
+    color: rgb(0, 255, 0);
 }
-
+/*
 p:nth-of-type(1) {
     position: absolute;
     top: 78%
@@ -213,14 +236,15 @@ p:nth-of-type(3) {
     top: 85%;
     font-size: 30px;
 }
-
-p:nth-of-type(4) {
+*/
+.p-counter{
     position: absolute;
     top: 10%;
     left: 45%;
     font-size: 200px;
-    color: yellow;
+    color: red;
 }
+
 
 p:nth-of-type(5) {
     position: absolute;
@@ -231,28 +255,52 @@ p:nth-of-type(5) {
 }
 
 body.almost_on {
-    background-image: url("https://media.giphy.com/media/BUY7MtOFcLir6/giphy.gif");
+    background-color: black;
+    background-image: url("img/glitch.gif");
     background-repeat: no-repeat;
     background-size: cover;
     background-position:top;
+    display: block;
+    user-select: none;
 }
 
 input.game {
-    color: greenyellow;
+    color: rgb(0, 255, 0);
     background-color: transparent;
     position: absolute;
     left: 0%;
     border: none;
     font-size: 31px;
     font-family: cmd;
+    user-select: none;
+    
+}
+#div-rows{
+    background-image: url("img/noise.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+    width: 76%;
+    top: 2%;
+    border: 2px gainsboro solid;
+    height: 68%;
+    overflow: hidden;
+}
+
+input.game:focus{
+    outline: none;
+}
+
+input.game:hover{
+    cursor: default;
 }
 
 input.al_critic {
-    color: orange;
+    color: rgb(247, 189, 0);
 }
 
 input.critical {
-    color: red;
+    color: rgb(204, 28, 28);
 }
 
 input#r2 {
@@ -300,17 +348,21 @@ input#r12 {
 }
 
 section>div#scorestreak {
-    background-image: url("https://media.giphy.com/media/5T0kxKdNjAktanvPqB/giphy.gif");
+    background-image: url("img/skull.gif");
+    background-position: center;
+    background-size: contain;
+    background-color:black;
+    background-repeat: no-repeat;
     position: absolute;
     border: 2px solid gainsboro;
     width: 20%;
     height: 68%;
-    background-position: center;
-    left: 79%;
+    right: 2%;
     top: 2%;
-    border-top: 26px solid gainsboro;
+    text-align: left;
+    overflow: hidden;
 }
-
+/*
 div#scorestreak>p:nth-of-type(1) {
     position: absolute;
     top: -8%;
@@ -324,36 +376,46 @@ div#scorestreak>img {
     top: -4%;
     left: 1%;
 }
+*/
+div#scorestreak>p:nth-of-type(1) {
+    top: 1%;
+    color: gainsboro;
+}
 
 div#scorestreak>p:nth-of-type(2) {
-    top: 1%;
-    color: red;
+    top: 10%;
+    font-size: 20px;
+    color: gainsboro;
 }
 
 div#scorestreak>p:nth-of-type(3) {
-    top: 10%;
-    font-size: 20px;
-    color: red;
-}
-
-div#scorestreak>p:nth-of-type(4) {
-    color: red;
+    color: gainsboro;
     top: 20%;
     left: 0%;
     font-size: 20px;
 }
-div#scorestreak>p:nth-of-type(5) {
-    color: red;
+div#scorestreak>p:nth-of-type(4) {
+    color: gainsboro;
     top: 30%;
     left: 0%;
     font-size: 20px;
 }
-
-div#scorestreak>p:nth-of-type(6) {
+/*
+div#scorestreak>p:nth-of-type(5) {
     color: yellow;
     position: absolute;
     top: 80%;
     left: 0%;
+    font-size: 52px;
+}
+*/
+.div-score{
+    position: absolute;
+    bottom:0;
+    height: 120px;
+}
+#score{
+    color: rgb(0, 255, 0);
     font-size: 52px;
 }
 
@@ -455,6 +517,7 @@ p.pause {
     position: absolute;
     top: 22%;
     left: 18%;
+    color: yellow;
 }
 
 p.pause.richtofen {

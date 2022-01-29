@@ -13,7 +13,7 @@
     This site needs use javascript
 </noscript>
 <body>
-    <script src="js/game.js"></script>
+    <script type="module" src="js/game.js"></script>
     <audio src="bgm/menu_bgm.mp3" autoplay></audio>
     <script src="js/audio.js"></script>
     <section class="mainmenu">
@@ -26,9 +26,9 @@
             <img src="img/keyboard.png" alt="logo" class="mainlogo">
             <article>
                 <h1 
-                    onclick="system.render_Menu()"
-                    onmouseover="system.mouse_over(this)"
-                    onmouseout="system.mouse_out(this)"
+                    onclick="window.system.render_Menu()"
+                    onmouseover="window.system.mouse_over(this)"
+                    onmouseout="window.system.mouse_out(this)"
                     class="play-button"
                 >
                     Play

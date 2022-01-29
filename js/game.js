@@ -1,177 +1,7 @@
-class row {
-    constructor(rn, id) {
-        this.time = rn;
-        this.id = id;
-        this.input = undefined;
-        this.c = 0;
-        this.palavras = [
-            null,
-            "eaiman",
-            "teste",
-            "cls",
-            "hack",
-            "sonic",
-            "c++",
-            "exit",
-            "while",
-            "cd",
-            "top",
-            "top2",
-            "cash",
-            "emil",
-            "stdlib",
-            "graphics",
-            "windows",
-            "audioh",
-            "poke",
-            "delete",
-            "macaco",
-            "mkdir",
-            "rmdir",
-            "zuninao",
-            "lonely",
-            "pernalonga",
-            "run",
-            "goto",
-            "ver",
-            "draw",
-            "display",
-            "text",
-            "jidadadai",
-            "jesus",
-            "nikolai",
-            "pascal",
-            "paskaru",
-            "isopen",
-            "pollevent",
-            "close",
-            "fome",
-            "deito",
-            "megazord",
-            "pascoa",
-            "coelho",
-            "window",
-            "network",
-            "comida",
-            "pessoa",
-            "eunice",
-            "conceicao",
-            "sleep",
-            "marombeiro",
-            "html",
-            "windows96",
-            "eaiman3",
-            "frankstein",
-            "sia",
-            "mouse",
-            "cavalo",
-            "deus",
-            "macaco",
-            "avestruz",
-            "cachorro",
-            "rato",
-            "anao",
-            "code",
-            ".code",
-            "life",
-            "home",
-            "goma",
-            "cmd",
-            "emil",
-            "ico",
-            "massa",
-            "2b",
-            "dir",
-            "erase",
-            "find",
-            "shutdown",
-            "print",
-            "joselito",
-            "ideias",
-            "parafuso",
-            "word",
-            "nazi_zombie",
-            "spaceman",
-            "peixonauta",
-            "password",
-            "eaiman4",
-            "kkkk",
-            "perder_a_cabeca",
-            "cringe",
-            "baiduehconfiavel",
-            "keyboard",
-            "kkk",
-            "game",
-            "index",
-            "vapor",
-            "kkk"
-        ]
+import { row } from './row.js';
 
-            ;
-        this.palavra = this.palavras[Math.ceil(Math.random() * 99)];
-    }
-    create_inp() {
-        let section = document.getElementsByTagName("section")[0];
-        let input = document.createElement("input");
-        input.classList.add("game");
-        input.id = this.id;
-        input.value = this.palavra;
-        this.input = input;
-        section.appendChild(input);
-    }
-    animation(c1) {
-        let c = c1;
-        if (!c1) { c = 0 }
-        else {
-            c = c.slice(0, c.length - 1);
-            c = parseInt(c);
-        }
-        let input = this.input;
-        let time = this.time;
-        if (system.game.hackerman) {
-            time = 8000;
-        }
-        this.intv = setInterval(function () {
-            input.style.left = `${c}%`;
-            if (c < 50 && c > 25) { input.classList.add("al_critic") }
-            if (c >= 50) { input.classList.remove("al_critic"); input.classList.add("critical") }
-            c++
-            if (c == 70) {
-                if (system.game.richtofen) {
-                    let score = document.getElementById("score");
-                    let teste = input.style.left;
-                    teste = teste.slice(0, teste.length - 1);
-                    teste = parseInt(teste);
-                    system.game.score += teste;
-                    score.innerText = `SCORE:${system.game.score}`;
-                }
-                c = 0; input.classList.remove("al_critic"); input.classList.remove("critical");
-            }
-        }, time)
-
-    }
-    cal_score() {
-        let score = document.getElementById("score");
-        let teste = this.input.style.left;
-        teste = teste.slice(0, teste.length - 1);
-        teste = parseInt(teste);
-        if (system.game.ls) { teste += 50 }
-        system.game.score += teste;
-        score.innerText = `SCORE:${system.game.score}`;
-    }
-    new_word() {
-    this.palavra = this.palavras[Math.ceil(Math.random() * 99)];
-        this.input.value = this.palavra;
-        this.stop_anm();
-        this.animation();
-        document.getElementsByClassName('user')[0].value = '';
-    }
-    verificar(user_txt) { if (user_txt == this.palavra) { this.new_word(); this.cal_score() }; }
-    stop_anm() { clearInterval(this.intv); }
-}
-let system = {
+const system = {
     //MENU
-    programmer: false,
     limpar: function () {
         let section = document.getElementsByTagName("section")[0];
         section.remove();
@@ -179,163 +9,162 @@ let system = {
     mouse_over: function (e) { e.classList.add("select"); },
     mouse_out: function (e) { e.classList.remove("select"); },
     render_Menu: function () {
-        this.limpar();
-        let body = document.getElementsByTagName("body")[0];
-        body.classList.add("menu")
-        let section = document.createElement("section");
-        body.appendChild(section);
-        let img_p = document.createElement("img");
-        img_p.classList.add("programmer");
-        img_p.src = "https://media.giphy.com/media/3oEjHWbXcpeKhTktXi/giphy.gif";
-        section.appendChild(img_p);
-
-        let input_p = document.createElement("input");
-        section.appendChild(input_p);
-        input_p.setAttribute("disabled", "disabled");
-        input_p.classList.add("programmer");
-        let c = 0;
-        setInterval(function () {
-            //10
-            input_p.value += "PROGRAMMER  "[c];
-            c++
-            if (c == 11) {
-                c = 0
-                input_p.value = '';
-            }
-        }, 50)
-        img_p.addEventListener("click", function () {
-            system.programmer = true;
-            system.game.r_interf()
-        });
+        //this.limpar();
+        //to implement difficult
+       this.game.r_interf()
     },
     //game
     game: {
-        //system.game
+        //streaks controller
         richtofen: false,
         hackerman: false,
         nuke: false,
         ls: false,
-        spaceman: false,
+        
         c: 0,
         c1: 0,
         c2: 0,
+
         pause: false,
         score: 0,
         spc: 1,
-        rows: [new row(300, "r1"),
-        new row(320, "r2"),
-        new row(340, "r3"),
-        new row(360, "r4"),
-        new row(380, "r5"),
-        new row(300, "r6"),
-        new row(300, "r7"),
-        new row(320, "r8"),
-        new row(340, "r9"),
-        new row(360, "r10"),
-        new row(380, "r11"),
-        new row(300, "r12"),
-        ],
-        user_txt: undefined,
+        //start rows interface (time,inputid)
+        rows:
+            [
+                new row(300, "r1"),
+                new row(320, "r2"),
+                new row(340, "r3"),
+                new row(360, "r4"),
+                new row(380, "r5"),
+                new row(300, "r6"),
+                new row(300, "r7"),
+                new row(320, "r8"),
+                new row(340, "r9"),
+                new row(360, "r10"),
+                new row(380, "r11"),
+                new row(300, "r12"),
+            ],
+        user_txt: undefined,//user text
         r_interf: function () {
+            //render interface
+            //clean() what already exists
             system.limpar();
             verificar_audio();
-            if (system.programmer) {
-                let body = document.getElementsByTagName("body")[0];
-                    body.classList.remove("menu");
-                    body.classList.add("almost_on");
-                let section = document.createElement("section");
-                    body.appendChild(section);
-                let div = document.createElement("div");
-                    div.classList.add("interface");
-                    section.appendChild(div);
-                let p = document.createElement("p");
-                    p.innerText = "Welcome Guest"
-                    section.appendChild(p);
-                let p1 = document.createElement("p");
-                    p1.innerText = ""
-                    section.appendChild(p1);
-                let p2 = document.createElement("p");
-                    p2.innerText = "root@chipskein_guest$>"
-                    section.appendChild(p2);
-                let input_u = document.createElement("input");
-                    input_u.classList.add("user");
-                    div.appendChild(input_u);
-                //toolbar
-                let exit_b = document.createElement("button");
+
+            let body = document.getElementsByTagName("body")[0]
+                body.classList.remove("menu")
+                body.classList.add("almost_on")
+            ;
+            let section = document.createElement("section");
+                body.appendChild(section);
+            
+            let div = document.createElement("div");
+                div.classList.add("interface");
+
+                
+            let p = document.createElement("p");
+                p.innerText = "Welcome guest"
+                div.appendChild(p);
+
+            let divinputline=document.createElement("div");
+                divinputline.classList.add("div-input-line")
+            let p2 = document.createElement("p");
+                p2.innerHTML = "<span style='color:#FF0'>guest</span>@<span style='color:rgb(38, 220, 233)'>iwnb_bis</span>:[/bin/]>"
+                p2.classList.add("p-input-line")
+                divinputline.appendChild(p2);
+            let input_u = document.createElement("input");
+                input_u.classList.add("user");
+                input_u.disabled=true;
+                divinputline.appendChild(input_u);
+            div.append(divinputline) 
+            section.appendChild(div);
+
+            /*
+            //toolbar
+            let exit_b = document.createElement("button");
                 exit_b.innerText = "X";
                 exit_b.classList.add("exit");
                 exit_b.addEventListener("click",function (){ window.location.reload()})
                 section.appendChild(exit_b);
-                let img_cmd = document.createElement("img");
-                    img_cmd.classList.add("cmd");
-                    img_cmd.src = "icons/cmdicon.png";
-                    section.appendChild(img_cmd);
-                let cmd_txt = document.createElement("h2");
-                    cmd_txt.classList.add("cmd");
-                    cmd_txt.innerText = "bash/bin/guest"
-                    section.appendChild(cmd_txt);
-                let p3 = document.createElement("p");
-                    section.appendChild(p3);
-                let scorestreak = document.createElement("div");
-                    scorestreak.id = "scorestreak";
-                    section.appendChild(scorestreak);
-                    p = document.createElement("p");
-                    p.innerText = "chipskein.exe"
-                    scorestreak.appendChild(p);
-                let img = document.createElement("img");
-                    img.src = "icons/streakicon.png";
-                    scorestreak.appendChild(img);
-                    p = document.createElement("p");
-                    p.innerText = "stronda_kawai.exe-(1000pts)"
-                    scorestreak.appendChild(p);
-                    p = document.createElement("p");
-                    p.innerText = "hackerman.exe-(2000pts)"
-                    scorestreak.appendChild(p);
-                    p = document.createElement("p");
-                    p.innerText = "richtofen.exe-(4000pts)"
-                    scorestreak.appendChild(p);
-                    p = document.createElement("p");
-                    p.innerText = "nuke.exe-(5000pts)"
-                    scorestreak.appendChild(p);
-                    p = document.createElement("p");
-                    p.id = "score";
-                    p.innerText = `SCORE:${this.score}`;
-                    scorestreak.appendChild(p);
-                    p = document.createElement("p");
-                    p.classList.add("pause");
-                    body.appendChild(p);
-                this.user_txt = document.getElementsByClassName("user")[0].value
-                let start = 5;
-                p3.innerText = start;
-                //testes
-                body.appendChild(document.createElement("audio"));
-                setTimeout(function () { bgm.update(); }, 2700);
-                    document.getElementsByTagName("audio")[1].onended=function(){bgm.update();}
-                let contagem = setInterval(function () {
-                    start--;
-                    p3.innerText = start;
-                    if (start == 0) {
-                        clearInterval(contagem);
-                        p3.remove();
-                    };
-                }, 1000)
-
+            let img_cmd = document.createElement("img");
+                img_cmd.classList.add("cmd");
+                img_cmd.src = "icons/cmdicon.png";
+                section.appendChild(img_cmd);
+            let cmd_txt = document.createElement("h2");
+                cmd_txt.classList.add("cmd");
+                cmd_txt.innerText = "/bin/sh"
+                section.appendChild(cmd_txt);
+            */
+            let p3 = document.createElement("p");
+                p3.classList.add("p-counter")
                 
-
-                setTimeout(function () {
-                    
-                    system.game.game()
-                    let body = document.getElementsByTagName("body")[0];
-                    body.classList.remove("menu");
-                    body.classList.remove("almost_on");
-                    body.classList.add("ingame");
-
-                }, 5000);
-
-            }
+            let scorestreak = document.createElement("div");
+                scorestreak.id = "scorestreak";
+                section.appendChild(scorestreak);
+             /*  
+                p = document.createElement("p");
+                p.innerText = "chipskein.exe"
+                scorestreak.appendChild(p);
+                let img = document.createElement("img");
+                img.src = "icons/streakicon.png";
+                scorestreak.appendChild(img);
+            */
+            p = document.createElement("p");
+            p.innerText = "stronda_kawai.exe-(1000pts)"
+            scorestreak.appendChild(p);
+            p = document.createElement("p");
+            p.innerText = "hackerman.exe-(2000pts)"
+            scorestreak.appendChild(p);
+            p = document.createElement("p");
+            p.innerText = "richtofen.exe-(4000pts)"
+            scorestreak.appendChild(p);
+            p = document.createElement("p");
+            p.innerText = "nuke.exe-(5000pts)"
+            scorestreak.appendChild(p);
+            let divscore=document.createElement("div")
+                divscore.classList.add("div-score")
             
+            p = document.createElement("p");
+            p.id = "score";
+            p.innerText = `SCORE:${this.score}`;
+            divscore.append(p)
+            scorestreak.appendChild(divscore);
+            //create div buffer
+            let divrows=document.createElement("div");
+            divrows.id="div-rows";
+            divrows.appendChild(p3);
+            section.append(divrows)
+            //create pause    
+            p = document.createElement("p");
+            p.classList.add("pause");
+            body.appendChild(p);
+            
+            this.user_txt = document.getElementsByClassName("user")[0].value
+            let start = 5;//counting down
+            p3.innerText = start;
+            //testes
+            body.appendChild(document.createElement("audio"));
+            setTimeout(function () { bgm.update(); }, 2700);
+                document.getElementsByTagName("audio")[1].onended=function(){bgm.update();}
+            let contagem = setInterval(function () {
+                start--;
+                p3.innerText = start;
+                if (start == 0) {
+                    clearInterval(contagem);
+                    p3.remove();
+                };
+            }, 1000)
+            setTimeout(function () {
+                
+                system.game.game()
+                let body = document.getElementsByTagName("body")[0];
+                body.classList.remove("menu");
+                body.classList.remove("almost_on");
+                body.classList.add("ingame");
+
+            }, 5000);    
         },
-        //spawn
+        //spawn streak
         spawn_hackerman: function () {
             if (this.spc <= 4) {
                 this.hackerman = true;
@@ -476,7 +305,7 @@ let system = {
                 this.spc++;
             }
         },
-        //kill
+        //kill streak
         kill_richtofen: function () {
             this.richtofen = false;
             
@@ -558,56 +387,56 @@ let system = {
 
         },
         verificar: function () {
-            if (this.user_txt == "stronda_kawai.exe" && document.querySelectorAll("div#scorestreak>p")[1].classList.contains("disponivel")) {
+            if (this.user_txt == "stronda_kawai.exe" && document.querySelectorAll("div#scorestreak>p")[0].classList.contains("disponivel")) {
                 this.ls = true;
                 this.spawn_ls();
                 setTimeout(function () {
                     let audio = document.createElement("audio");
                     audio.src = 'sound/tá fudido meu parceiro.mp3';
                     audio.autoplay = true;
-                    audio.volume = 1;
+                    audio.volume = 0.5;
                     system.game.kill_ls()
                 }, 10000)
             }
 
-            if (this.user_txt == "hackerman.exe" && document.querySelectorAll("div#scorestreak>p")[2].classList.contains("disponivel")) {
+            if (this.user_txt == "hackerman.exe" && document.querySelectorAll("div#scorestreak>p")[1].classList.contains("disponivel")) {
                 this.hackerman = true;
                 this.spawn_hackerman();
                 setTimeout(function () { system.game.kill_hackerman() }, 8000)
             }
-            if (this.user_txt == "richtofen.exe" && document.querySelectorAll("div#scorestreak>p")[3].classList.contains("disponivel")) {
+            if (this.user_txt == "richtofen.exe" && document.querySelectorAll("div#scorestreak>p")[2].classList.contains("disponivel")) {
                 this.richtofen = true;
                 this.spawn_richtofen();
                 setTimeout(function () {
                     let audio = document.createElement("audio");
-                    audio.src = 'sound/bye_richtofen.mp3';
+                    audio.src = '../sound/bye_richtofen.mp3';
                     audio.autoplay = true;
-                    audio.volume = 1; 
+                    audio.volume = 0.5; 
                 }, 6000)
                 setTimeout(function () {system.game.kill_richtofen() }, 10000)
             }
 
-            if (this.user_txt == "nuke.exe" && document.querySelectorAll("div#scorestreak>p")[4].classList.contains("disponivel")) {
+            if (this.user_txt == "nuke.exe" && document.querySelectorAll("div#scorestreak>p")[3].classList.contains("disponivel")) {
                 this.nuke = true;
                 this.spawn_nuke();
             }
 
 
             if (this.score >= 1000 && !this.nuke) {
-                document.querySelectorAll("div#scorestreak>p")[1].classList.add("disponivel");
+                document.querySelectorAll("div#scorestreak>p")[0].classList.add("disponivel");
                 if (this.c1 == 0) {
                     let audio = document.createElement("audio");
                     audio.src = 'sound/han hein.mp3';
                     audio.play();
-                    audio.volume = 0.3;
+                    audio.volume = 0.1;
                     this.c1 = 1;
                 }
             }
             if (this.score >= 2000 && !this.nuke) {
-                document.querySelectorAll("div#scorestreak>p")[2].classList.add("disponivel");
+                document.querySelectorAll("div#scorestreak>p")[1].classList.add("disponivel");
             }
             if (this.score >= 4000 && !this.nuke) {
-                document.querySelectorAll("div#scorestreak>p")[3].classList.add("disponivel");
+                document.querySelectorAll("div#scorestreak>p")[2].classList.add("disponivel");
             }
             if (this.score >= 5000 && !this.nuke) {
 
@@ -618,56 +447,104 @@ let system = {
                     audio.volume = 0.5;
                     this.c = 1;
                 }
-                document.querySelectorAll("div#scorestreak>p")[4].classList.add("disponivel");
+                document.querySelectorAll("div#scorestreak>p")[3].classList.add("disponivel");
             }
-            for (let i of this.rows) {
-                i.verificar(this.user_txt);
-            }
+            this.rows.forEach((row)=>{row.verificar(this.user_txt)});
         },
         game: function () {
+            //create inputs
+            //let padding=0;
             for (let i of this.rows) {
                 i.create_inp();
-            }
-            for (let i of this.rows) {
+                //i.input.style.top=`${padding}%`
+                //padding+=5
                 i.animation();
             }
-
-            document.addEventListener("keypress", function (e) {
-                switch (e.key) {
-                    case "Enter":
-                        system.game.user_txt = (document.getElementsByClassName("user")[0].value).toLowerCase();
-                        system.game.verificar();
-                        break;
-                    case " ":
-                        switch (system.game.pause) {
-                            case true:
-                                system.game.pause = false;
-                                pause_();
-                                break;
-                            case false:
-                                system.game.pause = true;
-                                pause_();
-                                break;
-                        }
-                        if (system.game.pause) {
-                            document.getElementsByClassName("pause")[0].innerHTML = "PAUSE";
-                            for (let i of system.game.rows) {
-                                i.stop_anm();
+            document.addEventListener("keydown",(e)=>{
+                    switch (e.key) {
+                        case "Enter":
+                            system.game.user_txt = (document.getElementsByClassName("user")[0].value).toLowerCase();
+                            system.game.verificar();
+                            break;
+                        case " ":
+                            switch (system.game.pause) {
+                                case true:
+                                    system.game.pause = false;
+                                    pause_();
+                                    break;
+                                case false:
+                                    system.game.pause = true;
+                                    pause_();
+                                    break;
                             }
-                        }
-                        else {
-                            document.getElementsByClassName("pause")[0].innerHTML = "";
-                            for (let i of system.game.rows) {
-                                i.palavra = i.palavras[Math.ceil(Math.random() * 99)];
-                                i.input.value = i.palavra;
-                                i.animation(i.input.style.left);
+                            if (system.game.pause) {
+                                document.getElementsByClassName("pause")[0].innerText = "PAUSE";
+                                for (let i of system.game.rows) {
+                                    i.stop_anm();
+                                }
                             }
-                        }
-                        break;
-                }
+                            else {
+                                document.getElementsByClassName("pause")[0].innerText = "";
+                                for (let i of system.game.rows) {
+                                    i.palavra = i.palavras[Math.round(Math.random() * i.palavras.length-1)];
+                                    i.input.value = i.palavra;
+                                    i.input.size=i.palavra.length;
+                                    i.animation(i.input.style.left);
+                                }
+                            }
+                            break;               
+                        case "Backspace":
+                            if(document.getElementsByClassName("user")[0].value.length>0){
+                                let cached=document.getElementsByClassName("user")[0].value.slice(0,-1)
+                                document.getElementsByClassName("user")[0].value=cached;
+                            }
+                            break;
+                        case "Delete":
+                            document.getElementsByClassName("user")[0].value="";
+                            break;
+                        default:
+                            //can't use keypress because of backspace and keyCode is depreciated
+                            if(
+                                !this.pause&&
+                                e.key!="OS"&&
+                                e.key!="Alt"&&
+                                e.key!="Control"&&
+                                e.key!="Shift"&&
+                                e.key!="CapsLock"&&
+                                e.key!="Insert"&&
+                                e.key!="Home"&&
+                                e.key!="End"&&
+                                e.key!="PageUp"&&
+                                e.key!="PageDown"&&
+                                e.key!="ScrollLock"&&
+                                e.key!="NumLock"&&
+                                e.key!="Pause"&&
+                                e.key!="ArrowUp"&&
+                                e.key!="ArrowDown"&&
+                                e.key!="ArrowLeft"&&
+                                e.key!="ArrowRight"&&
+                                e.key!="F1"&&
+                                e.key!="F2"&&
+                                e.key!="F3"&&
+                                e.key!="F4"&&
+                                e.key!="F5"&&
+                                e.key!="F6"&&
+                                e.key!="F7"&&
+                                e.key!="F8"&&
+                                e.key!="F9"&&
+                                e.key!="F10"&&
+                                e.key!="F11"&&
+                                e.key!="F12"&&
+                                e.key!="Dead"
+                            ) 
+                                document.getElementsByClassName("user")[0].value+=e.key
+                            ;                        
+                            break;
+                    }
             })
 
         }
     }
     
 }
+window.system=system;
