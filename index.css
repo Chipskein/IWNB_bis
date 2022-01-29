@@ -8,24 +8,18 @@
     src: url("font/Pixelmania.ttf");
 }
 
+
+
 body {
-    background-color: black;
+    background-color: rgb(74, 32, 170);
     color: white;
     text-align: center;
     font-family: cmd;
-    background-image: url("emil.png");
-    background-repeat: no-repeat;
-    background-size: 36%;
-    background-position: center;
-    background-position-y: -55%;
-    /*background-image: url("https://media.giphy.com/media/rWY9ySfjytitq/giphy.gif");*/
-    /*background-image: url("https://media.giphy.com/media/12LcyVMj7knWrC/giphy.gif");*/
 }
 
 body.menu {
     background-color: black;
     color: white;
-    text-align: center;
     font-family: cmd;
     background-image: url("https://media.giphy.com/media/rWY9ySfjytitq/giphy.gif");
     /*background-image: url("https://media.giphy.com/media/5ba7Il0evF1LO/giphy.gif");
@@ -52,13 +46,25 @@ body.dif {
     background-size: cover;
 }
 
-header>h1 {
+.title {
     font-size: 100px;
-    color: yellow;
-    position: absolute;
-    top: -1%;
-    left: 30%;
-    border-bottom: 5px solid;
+    color: white;
+}
+.mainmenu{
+    display: flexbox;
+    align-content: center;
+    align-items: center;
+}
+.root{
+    align-self: center;
+}
+.mainlogo{
+    width: 120px;
+    height: 120px;
+}
+.github-logo{
+    width: 40px;
+    height: 40px;
 }
 
 h1 {
@@ -67,19 +73,16 @@ h1 {
     cursor: default;
 }
 
-article>h1:nth-of-type(1) {
-    position: absolute;
+.footer-container-div{
+    text-align: center;
+}
+.play-button{
     font-size: 90px;
-    left: 45%;
-    top: 65%;
     cursor: url("cursor/cursor_tutorialyt.cur"), auto;
 }
 
 h2 {
-    position: absolute;
-    top: 90%;
-    left: 48%;
-    color: yellow;
+    color: white;
     cursor: default;
 }
 
@@ -134,16 +137,6 @@ input.errado {
     font-family: cmd;
 }
 
-/*img.mathman {
-    border: solid 5px red;
-    position: absolute;
-    top: 2%;
-    width: 600px;
-    height: 720px;
-    left: 55%;
-    cursor: url("cursor/cursor_tutorialyt.cur"),
-        auto;
-}*/
 
 img.programmer {
     position: absolute;
@@ -172,18 +165,7 @@ input.programmer {
     font-size: 30px;
     font-family: cmd;
 }
-/*
-input.mathman {
-    position: absolute;
-    left: 73%;
-    top: 90%;
-    width: 20%;
-    background-color: transparent;
-    border: none;
-    color: yellow;
-    font-size: 30px;
-    font-family: cmd;
-}*/
+
 
 img.cmd {
     position: absolute;

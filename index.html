@@ -5,25 +5,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title></title>
+    <link rel="shortcut icon" href="img/keyboard.png" type="image/x-icon">
+    <title>IWNB_bis</title>
     <link rel="stylesheet" href="index.css">
 </head>
-
+<noscript>
+    This site needs use javascript
+</noscript>
 <body>
-    <script src="game.js"></script>
+    <script src="js/game.js"></script>
     <audio src="bgm/menu_bgm.mp3" autoplay></audio>
-    <script src="audio.js"></script>
-    <section>
-        <header>
-            <h1>KEYBOARDGAME</h1>
-        </header>
-        <article>
-            <h1 onclick="system.render_Menu()" onmouseover="system.mouse_over(this)"
-                onmouseout="system.mouse_out(this)">Play</h1>
-            <h2>Chipskein</h2>
-        </article>
+    <script src="js/audio.js"></script>
+    <section class="mainmenu">
+        <div class="root">
+            <header>
+                <div>
+                    <h1 class="title">IWNB_bis</h1>
+                </div>
+            </header>
+            <img src="img/keyboard.png" alt="logo" class="mainlogo">
+            <article>
+                <h1 
+                    onclick="system.render_Menu()"
+                    onmouseover="system.mouse_over(this)"
+                    onmouseout="system.mouse_out(this)"
+                    class="play-button"
+                >
+                    Play
+                </h1>
+            </article>
+            <footer>
+                <a href="https://www.github.com/Chipskein/IWNB_bis.git" target="_blank">
+                    <img src="img/github.png" alt="github" class="github-logo">
+                </a>
+            </footer>
+        </div>
     </section>
-    
+    <script src="js/mobile.js"></script>
 </body>
 
 </html>
