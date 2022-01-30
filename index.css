@@ -105,6 +105,10 @@ div.interface {
 
 .div-input-line{
     display: block ruby;
+    /*On chrome*/
+    white-space: nowrap;
+    display: inline-flex;
+    align-items: baseline;
 }
 .p-input-line{
     font-size: 30px;
