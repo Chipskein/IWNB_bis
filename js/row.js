@@ -37,7 +37,7 @@ export class row
             if (c < 50 && c > 25) { input.classList.add("al_critic") }
             if (c >= 50) { input.classList.remove("al_critic"); input.classList.add("critical") }
             c++
-            if (c == 70) {
+            if (c == 90) {
                 if (system.getGameSwitchers().richtofen) {
                     let score = document.getElementById("score");
                     let teste = input.style.left;
