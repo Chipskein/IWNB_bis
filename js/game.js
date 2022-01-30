@@ -74,16 +74,16 @@ const game={
             section.appendChild(scorestreak);
 
         p = document.createElement("p");
-        p.innerText = "stronda_kawai.exe-(1000pts)"
+        p.innerText = "stronda-(1000pts)"
         scorestreak.appendChild(p);
         p = document.createElement("p");
-        p.innerText = "hackerman.exe-(2000pts)"
+        p.innerText = "hackerman-(2000pts)"
         scorestreak.appendChild(p);
         p = document.createElement("p");
-        p.innerText = "richtofen.exe-(4000pts)"
+        p.innerText = "richtofen-(4000pts)"
         scorestreak.appendChild(p);
         p = document.createElement("p");
-        p.innerText = "nuke.exe-(5000pts)"
+        p.innerText = "nuke-(5000pts)"
         scorestreak.appendChild(p);
         let divscore=document.createElement("div")
             divscore.classList.add("div-score")
@@ -379,16 +379,16 @@ const game={
         //verify score and call spawner
         let spawn_conditional=!this.ls&&!this.richtofen&&!this.hackerman
         switch(this.user_txt){
-            case "stronda_kawai.exe":
+            case "stronda":
                 if(this.score >= 1000&&spawn_conditional)  this.spawnController("stronda");
             break;
-            case "hackerman.exe":
+            case "hackerman":
                 if(this.score >= 2000&&spawn_conditional) this.spawnController("hackerman");
             break;
-            case "richtofen.exe":
+            case "richtofen":
                 if(this.score >= 4000&&spawn_conditional) this.spawnController("richtofen");
             break;
-            case "nuke.exe":
+            case "nuke":
                 if(this.score >= 5000&&spawn_conditional) this.spawnController("nuke");
             break;
         }
