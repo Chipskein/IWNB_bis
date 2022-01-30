@@ -13,7 +13,7 @@ const game={
     c2: 0,//this either
 
     pause: false,
-    score: 5000,
+    score: 0,
     spc: 1,//this is a streak call counter
 
     //rows interface (time,inputid)
@@ -420,7 +420,7 @@ const game={
                 else {
                     document.getElementsByClassName("pause")[0].innerText = "";
                     this.rows.forEach(row => {
-                        row.palavra = row.palavras[Math.round(Math.random() * row.palavras.length-1)];
+                        row.palavra = row.palavras[Math.round(Math.random()*(row.palavras.length-1))];
                         row.input.value = row.palavra;
                         row.input.size=row.palavra.length;
                         row.animation(row.input.style.left);

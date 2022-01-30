@@ -1,13 +1,18 @@
 import {words} from './words.js'
 export class row 
 {
+    time
+    id
+    palavras=words
+    input=undefined
+    c=0
+    palavra=""
     constructor(rn, id) {
         this.time = rn;
         this.id = id;
         this.input = undefined;
         this.c = 0;
-        this.palavras=words;
-        this.palavra = this.palavras[Math.round(Math.random() * this.palavras.length-1)];
+        this.palavra = this.palavras[Math.round(Math.random()*(this.palavras.length-1))];
     }
     create_inp() {
         let div=document.getElementById("div-rows");
@@ -68,7 +73,7 @@ export class row
         score.innerText = `SCORE:${system.getScore()}`;
     }
     new_word() {
-        this.palavra = this.palavras[Math.round(Math.random() * this.palavras.length-1)];
+        this.palavra = this.palavras[Math.round(Math.random()*(this.palavras.length-1))];
             this.input.value = this.palavra;
             this.input.size=this.palavra.length
             this.stop_anm();
